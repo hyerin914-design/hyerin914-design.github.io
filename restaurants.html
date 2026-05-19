@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모범 음식점 - 양구군 문화관광</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <h1 class="logo"><a href="index.html">YANGGU TOUR</a></h1>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="restaurants.html">모범 음식점</a></li>
+                    <li><a href="course.html">양구 코스</a></li>
+                    <li><a href="index.html#about">양구소개</a></li>
+                    <li><a href="index.html#attractions">관광명소</a></li>
+                    <li><a href="index.html#contact">오시는길</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sub Hero Section -->
+    <section class="sub-hero" style="background-image: url('images/restaurant_hero_1779168682964.png');">
+        <div class="sub-hero-overlay"></div>
+        <div class="sub-hero-content">
+            <h2 class="animate-up">모범 음식점</h2>
+            <p class="animate-up delay-1">양구군이 보증하는 안심 식당! 맛과 정성으로 여러분을 모십니다.</p>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section bg-light">
+        <div class="container text-center fade-in">
+            <h3 style="font-size: 24px; color: var(--text-main); margin-bottom: 30px;">한눈에 보는 맛집 지도</h3>
+            <div id="map" style="width: 100%; height: 500px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 60px; background-color: #e5e3df;"></div>
+        </div>
+        <div class="container">
+            <div class="table-responsive fade-in">
+                <table class="restaurant-table">
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>업소명</th>
+                            <th>전화번호</th>
+                            <th>주메뉴</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>감람원</td><td>033-481-6788</td><td>삼계탕</td></tr>
+                        <tr><td>2</td><td>광치막국수</td><td>033-481-4095</td><td>막국수</td></tr>
+                        <tr><td>3</td><td>꽃보다 소 양구점</td><td>033-482-3175</td><td>숯불구이</td></tr>
+                        <tr><td>4</td><td>도촌삼계탕</td><td>033-482-1002</td><td>삼계탕</td></tr>
+                        <tr><td>5</td><td>도촌막국수식당</td><td>033-481-4627</td><td>막국수</td></tr>
+                        <tr><td>6</td><td>돈 갈비</td><td>033-482-9289</td><td>숯불구이</td></tr>
+                        <tr><td>7</td><td>모범떡볶이</td><td>033-481-9827</td><td>떡볶이</td></tr>
+                        <tr><td>8</td><td>비비큐·우쿠야</td><td>033-481-1318</td><td>치킨, 돈까스</td></tr>
+                        <tr><td>9</td><td>샤브향</td><td>033-482-5633</td><td>고기류 샤브</td></tr>
+                        <tr><td>10</td><td>소나무함흥냉면막국수</td><td>033-482-5234</td><td>냉면</td></tr>
+                        <tr><td>11</td><td>시래정</td><td>033-481-6616</td><td>시래기정식</td></tr>
+                        <tr><td>12</td><td>양구수산횟집</td><td>033-481-2643</td><td>민물회, 매운탕</td></tr>
+                        <tr><td>13</td><td>오래드림고원</td><td>033-481-9224</td><td>식육</td></tr>
+                        <tr><td>14</td><td>이가돈가</td><td>033-481-1400</td><td>숯불구이</td></tr>
+                        <tr><td>15</td><td>장수오골계</td><td>033-481-8175</td><td>오골계구이, 탕류</td></tr>
+                        <tr><td>16</td><td>청참치</td><td>033-481-7233</td><td>참치회, 바다회</td></tr>
+                        <tr><td>17</td><td>최가네</td><td>033-481-3338</td><td>숯불구이</td></tr>
+                        <tr><td>18</td><td>회마을</td><td>033-481-5939</td><td>바다회, 매운탕</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h2 class="footer-logo">YANGGU TOUR</h2>
+                <p>강원특별자치도 양구군 양구읍 관공서로 38 양구군청</p>
+                <p>대표전화 : 033-481-2191 | 관광안내소 : 033-480-2251</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">개인정보처리방침</a>
+                <a href="#">이용약관</a>
+                <a href="#">이메일무단수집거부</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Yanggu-gun. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Popup -->
+    <div id="chatbot-popup" class="chatbot-popup">
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <strong>양구 안내 도우미</strong>
+                <button class="chatbot-close" onclick="toggleChatbot()">&times;</button>
+            </div>
+            <div class="chatbot-body">
+                <p>안녕하세요! <strong>양구를 소개할게.</strong><br>어떤 정보가 필요하신가요?</p>
+                <div class="chatbot-menu">
+                    <a href="course.html" class="chat-btn">🗺️ 맞춤형 코스 추천</a>
+                    <a href="restaurants.html" class="chat-btn">🍽️ 모범 음식점 안내</a>
+                    <a href="culture.html" class="chat-btn">🎨 문화 예술 시설</a>
+                    <a href="index.html#attractions" class="chat-btn" onclick="toggleChatbot()">🏞️ 주요 관광 명소</a>
+                </div>
+            </div>
+        </div>
+        <img src="images/sanyang2.png" alt="양구 산양 챗봇" class="chatbot-icon" onclick="toggleChatbot()">
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="map.js"></script>
+</body>
+</html>

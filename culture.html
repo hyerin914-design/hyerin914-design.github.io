@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문화시설 안내 - 양구군 문화관광</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <h1 class="logo"><a href="index.html">YANGGU TOUR</a></h1>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="restaurants.html">모범 음식점</a></li>
+                    <li><a href="course.html">양구 코스</a></li>
+                    <li><a href="index.html#about">양구소개</a></li>
+                    <li><a href="index.html#attractions">관광명소</a></li>
+                    <li><a href="index.html#contact">오시는길</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sub Hero Section -->
+    <section class="sub-hero" style="background-image: url('images/museum_1779164974892.png');">
+        <div class="sub-hero-overlay"></div>
+        <div class="sub-hero-content">
+            <h2 class="animate-up">문화 예술</h2>
+            <p class="animate-up delay-1">예술적 영감이 가득한 양구의 문화 명소를 소개합니다.</p>
+        </div>
+    </section>
+
+    <!-- List Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="list-filters fade-in">
+                <button class="filter-btn active">전체</button>
+                <button class="filter-btn">미술관</button>
+                <button class="filter-btn">박물관</button>
+            </div>
+
+            <div class="list-container">
+                <!-- List Item 1 -->
+                <div class="list-item fade-in">
+                    <div class="list-img" style="background-image: url('images/museum_1779164974892.png');"></div>
+                    <div class="list-info">
+                        <div class="list-tags">
+                            <span class="tag">미술관</span>
+                        </div>
+                        <h3 class="list-title"><a href="http://www.parksookeun.or.kr" target="_blank">박수근미술관</a></h3>
+                        <p class="list-desc">한국 근현대 미술의 거장 박수근 화백의 생가 터에 건립된 미술관. 작가의 삶과 예술을 조명합니다.</p>
+                        <div class="list-details">
+                            <p>📍 강원특별자치도 양구군 양구읍 박수근로 265-15</p>
+                            <p>📞 033-480-2655</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- List Item 2 -->
+                <div class="list-item fade-in">
+                    <div class="list-img" style="background-image: url('images/baekja_museum_1779166063797.png');"></div>
+                    <div class="list-info">
+                        <div class="list-tags">
+                            <span class="tag">박물관</span>
+                        </div>
+                        <h3 class="list-title">양구백자박물관</h3>
+                        <p class="list-desc">양구 백토로 만든 조선시대 왕실 백자의 역사와 유물을 확인하고 직접 체험해 볼 수 있는 공간입니다.</p>
+                        <div class="list-details">
+                            <p>📍 강원특별자치도 양구군 방산면 평화로 5182</p>
+                            <p>📞 033-480-2664</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- List Item 3 -->
+                <div class="list-item fade-in">
+                    <div class="list-img" style="background-image: url('images/prehistory_museum_1779166078985.png');"></div>
+                    <div class="list-info">
+                        <div class="list-tags">
+                            <span class="tag">박물관</span>
+                        </div>
+                        <h3 class="list-title">양구선사박물관</h3>
+                        <p class="list-desc">파로호 상류 지역에서 발굴된 구석기 시대부터 청동기 시대까지의 유물을 만나볼 수 있는 역사 교육의 장입니다.</p>
+                        <div class="list-details">
+                            <p>📍 강원특별자치도 양구군 양구읍 금강산로 439-52</p>
+                            <p>📞 033-480-2677</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h2 class="footer-logo">YANGGU TOUR</h2>
+                <p>강원특별자치도 양구군 양구읍 관공서로 38 양구군청</p>
+                <p>대표전화 : 033-481-2191 | 관광안내소 : 033-480-2251</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">개인정보처리방침</a>
+                <a href="#">이용약관</a>
+                <a href="#">이메일무단수집거부</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Yanggu-gun. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Popup -->
+    <div id="chatbot-popup" class="chatbot-popup">
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <strong>양구 안내 도우미</strong>
+                <button class="chatbot-close" onclick="toggleChatbot()">&times;</button>
+            </div>
+            <div class="chatbot-body">
+                <p>안녕하세요! <strong>양구를 소개할게.</strong><br>어떤 정보가 필요하신가요?</p>
+                <div class="chatbot-menu">
+                    <a href="course.html" class="chat-btn">🗺️ 맞춤형 코스 추천</a>
+                    <a href="restaurants.html" class="chat-btn">🍽️ 모범 음식점 안내</a>
+                    <a href="culture.html" class="chat-btn">🎨 문화 예술 시설</a>
+                    <a href="index.html#attractions" class="chat-btn" onclick="toggleChatbot()">🏞️ 주요 관광 명소</a>
+                </div>
+            </div>
+        </div>
+        <img src="images/sanyang2.png" alt="양구 산양 챗봇" class="chatbot-icon" onclick="toggleChatbot()">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
