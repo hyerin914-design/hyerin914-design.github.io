@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCursor();
 
         // Mouse hover effects on interactive elements
-        const hoverTargets = document.querySelectorAll('a, button, .modal-trigger, .nav-dot, .attraction-item-link, .fest-item-link, .chatbot-icon');
+        const hoverTargets = document.querySelectorAll('a, button, .modal-trigger, .nav-dot, .attraction-item-link, .fest-item-link, .chatbot-icon, input, textarea');
         hoverTargets.forEach(target => {
             target.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
             target.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
@@ -201,6 +201,39 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === modal) {
                 closeModal();
             }
+        });
+    }
+
+    // ==========================================================================
+    // 5.5. Contact Form EmailJS Integration
+    // ==========================================================================
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    
+    if (contactForm && formStatus) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // 전송 진행 중 상태 표시
+            formStatus.textContent = '메시지를 전송하는 중입니다...';
+            formStatus.className = 'form-status-msg sending';
+            
+            // emailjs.sendForm(service_id, template_id, form_element)
+            emailjs.sendForm('service_be9gsfv', 'template_1elor8p', this)
+                .then(() => {
+                    formStatus.textContent = '메시지가 성공적으로 전송되었습니다! 담당자가 곧 확인하겠습니다.';
+                    formStatus.className = 'form-status-msg success';
+                    contactForm.reset();
+                    
+                    // 5초 뒤 성공 알림 숨기기
+                    setTimeout(() => {
+                        formStatus.style.display = 'none';
+                    }, 5000);
+                }, (error) => {
+                    formStatus.textContent = '메시지 전송에 실패했습니다. 다시 시도해 주세요.';
+                    formStatus.className = 'form-status-msg error';
+                    console.error('EmailJS Send Error:', error);
+                });
         });
     }
 });

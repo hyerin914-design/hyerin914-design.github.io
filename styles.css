@@ -1444,3 +1444,131 @@ ul {
         transform: translateY(0);
     }
 }
+
+/* ==========================================================================
+   Contact Form Styles (Editorial Edition)
+   ========================================================================== */
+.editorial-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.form-group-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group-row .form-group {
+    flex: 1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+}
+
+.form-group input,
+.form-group textarea {
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
+    padding: 14px 18px;
+    color: var(--text-main);
+    font-size: 14px;
+    border-radius: 0;
+    transition: var(--transition);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(250, 249, 245, 0.25);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: rgba(213, 194, 157, 0.03);
+}
+
+.btn-send-message {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 35px;
+    background-color: var(--primary-color);
+    color: var(--bg-main);
+    border: none;
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.btn-send-message:hover {
+    background-color: var(--text-main);
+    color: var(--bg-main);
+    transform: translateY(-2px);
+}
+
+.btn-send-message .btn-icon {
+    font-size: 12px;
+    transition: transform 0.3s;
+}
+
+.btn-send-message:hover .btn-icon {
+    transform: translateX(5px);
+}
+
+.form-status-msg {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 15px;
+    padding: 12px 20px;
+    display: none;
+}
+
+.form-status-msg.sending {
+    display: block;
+    background-color: rgba(213, 194, 157, 0.1);
+    border-left: 3px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.form-status-msg.success {
+    display: block;
+    background-color: rgba(85, 122, 97, 0.1);
+    border-left: 3px solid #557A61;
+    color: #88B196;
+}
+
+.form-status-msg.error {
+    display: block;
+    background-color: rgba(153, 114, 92, 0.1);
+    border-left: 3px solid #99725C;
+    color: #D1A38C;
+}
+
+@media (max-width: 576px) {
+    .form-group-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .btn-send-message {
+        width: 100%;
+    }
+}

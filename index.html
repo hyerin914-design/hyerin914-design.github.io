@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Google Fonts: Serif(Noto Serif KR, Playfair Display) & Sans Serif(Noto Sans KR) -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init({
+            publicKey: "Jq3MsmRKlGlDZhslu",
+          });
+       })();
+    </script>
 </head>
 <body>
     <!-- Custom Interactive Cursor -->
@@ -22,6 +31,7 @@
         <a href="#attractions" class="nav-dot" data-chapter="03"><span class="dot-label">03 PLACES</span></a>
         <a href="#festivals" class="nav-dot" data-chapter="04"><span class="dot-label">04 SEASONS</span></a>
         <a href="#directions" class="nav-dot" data-chapter="05"><span class="dot-label">05 WAY</span></a>
+        <a href="#contact-section" class="nav-dot" data-chapter="06"><span class="dot-label">06 CONTACT</span></a>
     </div>
 
     <!-- Header -->
@@ -37,6 +47,7 @@
                     <li><a href="#gomchwi">양구 곰취</a></li>
                     <li><a href="#attractions">명소</a></li>
                     <li><a href="#directions">오시는길</a></li>
+                    <li><a href="#contact-section">문의하기</a></li>
                 </ul>
             </nav>
         </div>
@@ -338,6 +349,57 @@
                             <p><b>영남·호남권</b> ➔ 중앙고속도로 ➔ 홍천IC ➔ 양구 (약 2~3시간)</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPTER 6: Contact (Inquiry Split) -->
+    <section id="contact-section" class="chapter-section bg-light-editorial">
+        <div class="chapter-split-wrapper">
+            <!-- Left Media Panel -->
+            <div class="chapter-media-panel">
+                <div class="panel-bg-image active" style="background-image: url('images/sanyang.png');"></div>
+                <div class="media-caption font-playfair">Figure 6.1 — Yanggu Sanyang Editorial Mascot</div>
+            </div>
+            <!-- Right Content Panel -->
+            <div class="chapter-content-panel">
+                <div class="section-header-editorial">
+                    <span class="section-num font-playfair">06</span>
+                    <span class="section-category font-playfair">CONTACT US</span>
+                    <h2 class="section-title-editorial serif">문의 남기기</h2>
+                </div>
+                
+                <div class="panel-scroll-content">
+                    <p class="paragraph-body" style="margin-bottom: 24px;">
+                        양구 관광에 대한 궁금한 사항이나 의견을 보내주시면 담당자 확인 후 신속하게 회신해 드리겠습니다.
+                    </p>
+                    
+                    <form id="contact-form" class="editorial-contact-form">
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="user-name" class="font-playfair">NAME</label>
+                                <input type="text" id="user-name" name="name" required placeholder="성함">
+                            </div>
+                            <div class="form-group">
+                                <label for="user-email" class="font-playfair">EMAIL</label>
+                                <input type="email" id="user-email" name="email" required placeholder="회신받을 이메일">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="msg-title" class="font-playfair">SUBJECT</label>
+                            <input type="text" id="msg-title" name="title" required placeholder="문의 제목">
+                        </div>
+                        <div class="form-group">
+                            <label for="msg-content" class="font-playfair">MESSAGE</label>
+                            <textarea id="msg-content" name="message" required rows="4" placeholder="내용을 작성해주세요."></textarea>
+                        </div>
+                        <button type="submit" class="btn-send-message font-playfair">
+                            <span>SEND MESSAGE</span>
+                            <span class="btn-icon">➔</span>
+                        </button>
+                    </form>
+                    <div id="form-status" class="form-status-msg"></div>
 
                     <!-- Footer Embedded inside the last chapter panel -->
                     <footer class="embedded-footer">
