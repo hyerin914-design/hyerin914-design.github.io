@@ -229,10 +229,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => {
                         formStatus.style.display = 'none';
                     }, 5000);
-                }, (error) => {
+                })
+                .catch((error) => {
                     formStatus.textContent = '메시지 전송에 실패했습니다. 다시 시도해 주세요.';
                     formStatus.className = 'form-status-msg error';
                     console.error('EmailJS Send Error:', error);
+                });
         });
     }
 
