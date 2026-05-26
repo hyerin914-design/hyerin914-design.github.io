@@ -1572,3 +1572,49 @@ ul {
         width: 100%;
     }
 }
+
+/* ==========================================================================
+   Notice Modal Styles (Welcome Alert Dialog)
+   ========================================================================== */
+.notice-modal-content {
+    max-width: 480px;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid var(--border-dark);
+}
+
+.notice-modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    margin-top: 15px;
+}
+
+.notice-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-main);
+    line-height: 1.65;
+    word-break: keep-all;
+}
+
+.btn-notice-confirm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 36px;
+    background-color: var(--primary-color);
+    color: var(--bg-main);
+    border: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-notice-confirm:hover {
+    background-color: var(--text-main);
+    color: var(--bg-main);
+}

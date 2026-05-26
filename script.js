@@ -233,8 +233,43 @@ document.addEventListener('DOMContentLoaded', () => {
                     formStatus.textContent = '메시지 전송에 실패했습니다. 다시 시도해 주세요.';
                     formStatus.className = 'form-status-msg error';
                     console.error('EmailJS Send Error:', error);
-                });
         });
+    }
+
+    // ==========================================================================
+    // 5.8. Notice Modal (Welcome Dialog)
+    // ==========================================================================
+    const noticeModal = document.getElementById('notice-modal');
+    const noticeCloseBtn = document.querySelector('.notice-close-btn');
+    const noticeConfirmBtn = document.querySelector('.btn-notice-confirm');
+
+    if (noticeModal) {
+        // Show immediately after load
+        noticeModal.style.display = 'flex';
+        void noticeModal.offsetWidth; // Trigger layout reflow
+        noticeModal.classList.add('show');
+
+        const closeNotice = () => {
+            noticeModal.classList.remove('show');
+            setTimeout(() => {
+                noticeModal.style.display = 'none';
+            }, 300);
+        };
+
+        if (noticeCloseBtn) noticeCloseBtn.addEventListener('click', closeNotice);
+        if (noticeConfirmBtn) noticeConfirmBtn.addEventListener('click', closeNotice);
+
+        window.addEventListener('click', (e) => {
+            if (e.target === noticeModal) {
+                closeNotice();
+            }
+        });
+        
+        // Connect with custom cursor hover effect
+        if (noticeConfirmBtn && cursorRing) {
+            noticeConfirmBtn.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
+            noticeConfirmBtn.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
+        }
     }
 });
 
