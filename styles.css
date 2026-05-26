@@ -1576,6 +1576,21 @@ ul {
 /* ==========================================================================
    Notice Modal Styles (Welcome Alert Dialog)
    ========================================================================== */
+.notice-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    color: var(--text-muted);
+    font-size: 26px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.notice-close-btn:hover {
+    color: var(--primary-color);
+}
+
 .notice-modal-content {
     max-width: 480px;
     padding: 40px;

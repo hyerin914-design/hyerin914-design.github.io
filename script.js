@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCursor();
 
         // Mouse hover effects on interactive elements
-        const hoverTargets = document.querySelectorAll('a, button, .modal-trigger, .nav-dot, .attraction-item-link, .fest-item-link, .chatbot-icon, input, textarea');
+        const hoverTargets = document.querySelectorAll('a, button, .modal-trigger, .nav-dot, .attraction-item-link, .fest-item-link, .chatbot-icon, input, textarea, .notice-close-btn');
         hoverTargets.forEach(target => {
             target.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
             target.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
@@ -244,10 +244,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const noticeConfirmBtn = document.querySelector('.btn-notice-confirm');
 
     if (noticeModal) {
-        // Show immediately after load
-        noticeModal.style.display = 'flex';
-        void noticeModal.offsetWidth; // Trigger layout reflow
-        noticeModal.classList.add('show');
+        // Show immediately after load with a minor delay to prevent rendering glitch
+        setTimeout(() => {
+            noticeModal.style.display = 'flex';
+            void noticeModal.offsetWidth; // Trigger layout reflow
+            noticeModal.classList.add('show');
+        }, 100);
 
         const closeNotice = () => {
             noticeModal.classList.remove('show');
@@ -269,6 +271,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (noticeConfirmBtn && cursorRing) {
             noticeConfirmBtn.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
             noticeConfirmBtn.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
+        }
+        
+        if (noticeCloseBtn && cursorRing) {
+            noticeCloseBtn.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
+            noticeCloseBtn.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
         }
     }
 });
